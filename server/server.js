@@ -11,7 +11,10 @@ const port = process.env.PORT || 4000;
 
 connectDB();
 
-const allowedOrigin = ["http://localhost:5173","https://mern-auth-client-lncg.onrender.com"];
+const allowedOrigin = [
+  "http://localhost:5173",
+  "https://mern-auth-client-lncg.onrender.com",
+];
 //Middleware
 app.use(express.json());
 app.use(cookieParser());
