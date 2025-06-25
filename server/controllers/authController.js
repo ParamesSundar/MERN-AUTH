@@ -52,7 +52,7 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
     return res.json({
-      succes: false,
+      success: false,
       message: "email and password are requires",
     });
   }
@@ -79,7 +79,7 @@ export const login = async (req, res) => {
 
     return res.json({ success: true });
   } catch (error) {
-    res.json({ succes: false, message: error.message });
+    res.json({ success: false, message: error.message });
   }
 };
 export const logout = async (req, res) => {
@@ -164,7 +164,7 @@ export const verifyEmail = async (req, res) => {
 };
 export const isAuthenticated = async (req, res) => {
   try {
-    res.json({ succes: true, message: "User logged in" });
+    res.json({ success: true, message: "User logged in" });
   } catch (error) {
     res.json({ success: true, message: error.message });
   }
@@ -232,6 +232,6 @@ export const resetPassword = async (req, res) => {
       message: "Password has been Reset successfully",
     });
   } catch (error) {
-    res.json({ succes: false, message: error.message });
+    res.json({ success: false, message: error.message });
   }
 };
