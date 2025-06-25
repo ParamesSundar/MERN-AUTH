@@ -149,7 +149,7 @@ export const verifyEmail = async (req, res) => {
       return res.json({ success: false, messsage: "Invalid OTP" });
     }
 
-    if (user.verifyOtpExpiredAt < Date.now) {
+    if (user.verifyOtpExpiredAt < Date.now()) {
       return res.json({ success: false, message: "OTP Expired" });
     }
     user.isAccountVerified = true;
@@ -194,7 +194,7 @@ export const sendResetOtp = async (req, res) => {
       html: PASSWORD_RESET_TEMPLATE.replace("{{otp}}", otp).replace(
         "{{email}}",
         user.email
-      ), 
+      ),
     };
     await transporter.sendMail(mailOptions);
     res.json({ success: true, message: "OTP send to your email" });
