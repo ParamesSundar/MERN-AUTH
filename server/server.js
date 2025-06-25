@@ -13,7 +13,7 @@ connectDB();
 
 const allowedOrigin = [
   "http://localhost:5173",
-  "https://mern-auth-client-lncg.onrender.com",
+  "https://mern-auth-client-50tv.onrender.com",
 ];
 //Middleware
 app.use(express.json());
